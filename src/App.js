@@ -32,15 +32,15 @@ function App() {
         
     }
 
-  const searchedStories = stories.filter((story) => {
-    return story.title.includes(searchTerm)
-  })
+  const searchedStories = stories.filter((story) => 
+     story.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   return (
     <div>
       <h1>My Hacker Stories</h1>
 
-      <Search onSearch={handleChange}/> 
+      <Search search={searchTerm} onSearch={handleChange}/> 
 
       <hr/>
       
